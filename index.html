@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipos Dosificadores · Demo — Calculadora de Financiación</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='6' fill='%23131d27'/%3E%3Cpath d='M12 9h12v6l-4 4v7h-4v-7l-4-4V9Z' fill='none' stroke='%23F59E0B' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Ir al simulador de financiación</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 36 36" width="36" height="36" fill="none">
+            <rect x="2" y="2" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 10h12v6l-4 4v6h-4v-6l-4-4v-6Z" stroke="#F59E0B" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="18" cy="29" r="1.5" fill="#F59E0B"/>
+          </svg>
+        </div>
+        <div>
+          <p class="brand-name" id="company-name">Equipos Dosificadores · Demo</p>
+          <p class="brand-tagline" id="company-tagline">Maquinaria industrial de dosificación</p>
+        </div>
+      </div>
+
+      <div class="header-meta">
+        <span class="demo-pill" id="header-demo-badge">DEMO · VALORES ILUSTRATIVOS</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="container main-shell">
+    <section class="intro-banner" aria-labelledby="page-title">
+      <h1 id="page-title">Calculadora de financiación</h1>
+      <p class="intro-copy">
+        Simulá condiciones comerciales para equipos dosificadores en pesos argentinos, con cálculo mensual y envío directo por WhatsApp.
+      </p>
+    </section>
+
+    <div class="calculator-layout">
+      <section class="panel panel-controls" aria-labelledby="controls-heading">
+        <h2 id="controls-heading" class="panel-title">1. Configuración de la operación</h2>
+
+        <fieldset class="control-group">
+          <legend class="group-legend">Seleccioná el equipo dosificador</legend>
+          <div id="machine-options" class="machine-grid" role="radiogroup" aria-label="Equipos dosificadores disponibles"></div>
+        </fieldset>
+
+        <article class="machine-preview" aria-live="polite" aria-label="Detalle del equipo seleccionado">
+          <div class="machine-media">
+            <img id="machine-image" src="assets/machine-dv200.svg" alt="Esquema técnico ilustrativo del equipo" width="640" height="360">
+            <span class="media-demo-badge" aria-label="Imagen de demostración">DEMO</span>
+          </div>
+          <div class="machine-info">
+            <div class="machine-info-top">
+              <span class="machine-category" id="machine-category"></span>
+              <span class="machine-code" id="machine-code"></span>
+            </div>
+            <h3 class="machine-name" id="machine-name"></h3>
+            <p class="machine-description" id="machine-description"></p>
+            <ul class="machine-specs" id="machine-specs"></ul>
+            <div class="cash-price-bar">
+              <span class="cash-price-label">Precio de contado</span>
+              <strong class="cash-price-value" id="cash-price-value"></strong>
+            </div>
+          </div>
+        </article>
+
+        <div class="control-group">
+          <div class="field-header">
+            <label class="group-legend" for="down-payment-input">Anticipo (entrega inicial)</label>
+            <span class="percent-pill" id="down-payment-percent-badge" aria-live="polite">20%</span>
+          </div>
+
+          <div class="down-payment-inputs">
+            <div class="currency-input-wrap">
+              <span class="currency-prefix" aria-hidden="true">$</span>
+              <input
+                type="number"
+                id="down-payment-input"
+                name="downPayment"
+                inputmode="decimal"
+                step="any"
+                autocomplete="off"
+                aria-describedby="down-payment-hint down-payment-error"
+              >
+            </div>
+            <div class="preset-row" id="down-payment-presets" aria-label="Porcentajes rápidos de anticipo"></div>
+          </div>
+
+          <div class="slider-wrap">
+            <label class="sr-only" for="down-payment-slider">Porcentaje de anticipo</label>
+            <input
+              type="range"
+              id="down-payment-slider"
+              name="downPaymentPercent"
+            >
+            <div class="slider-bounds">
+              <span id="down-payment-min-label">0%</span>
+              <span id="down-payment-max-label">70%</span>
+            </div>
+          </div>
+
+          <p class="field-hint" id="down-payment-hint"></p>
+          <p class="field-error" id="down-payment-error" role="alert" aria-live="polite" hidden></p>
+        </div>
+
+        <fieldset class="control-group">
+          <legend class="group-legend">Modalidad de financiación</legend>
+          <div id="modality-options" class="segmented-grid" role="radiogroup" aria-label="Modalidad de financiación"></div>
+        </fieldset>
+
+        <fieldset class="control-group">
+          <legend class="group-legend">Cantidad de pagos mensuales</legend>
+          <div id="payment-count-options" class="pill-grid" role="radiogroup" aria-label="Cantidad de pagos"></div>
+        </fieldset>
+      </section>
+
+      <section class="panel panel-results" aria-labelledby="results-heading">
+        <div class="results-header">
+          <h2 id="results-heading" class="panel-title">2. Resultado de la simulación</h2>
+          <span class="method-badge" id="method-badge"></span>
+        </div>
+
+        <div id="results-invalid-state" class="invalid-banner" role="status" hidden>
+          <h3>Revisá los datos ingresados</h3>
+          <p id="results-invalid-message">Ingresá un anticipo dentro del rango permitido para calcular el plan de pagos.</p>
+          <button type="button" class="btn-secondary" id="fix-down-payment-btn">Restaurar anticipo sugerido</button>
+        </div>
+
+        <div id="results-valid-state">
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <span class="kpi-label">Monto financiado</span>
+              <strong class="kpi-value" id="summary-financed"></strong>
+              <span class="kpi-sub" id="summary-down-payment-line"></span>
+            </div>
+
+            <div class="kpi-card">
+              <span class="kpi-label">Intereses totales</span>
+              <strong class="kpi-value" id="summary-interest"></strong>
+              <span class="kpi-sub" id="summary-rate-line"></span>
+            </div>
+
+            <div class="kpi-card kpi-card-highlight">
+              <span class="kpi-label" id="summary-installment-label">Importe por pago</span>
+              <strong class="kpi-value" id="summary-installment"></strong>
+              <span class="kpi-sub" id="summary-installment-note"></span>
+            </div>
+
+            <div class="kpi-card kpi-card-total">
+              <span class="kpi-label">Costo total de la operación</span>
+              <strong class="kpi-value" id="summary-total-cost"></strong>
+              <span class="kpi-sub">Anticipo + capital + intereses</span>
+            </div>
+          </div>
+
+          <div class="cta-block">
+            <a
+              id="whatsapp-cta"
+              class="btn-whatsapp"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2C6.52 2 2.04 6.48 2.04 12c0 1.77.46 3.5 1.34 5.02L2 22l5.12-1.34A9.94 9.94 0 0 0 12.04 22c5.52 0 10-4.48 10-10S17.56 2 12.04 2Zm5.84 14.2c-.25.7-1.45 1.34-2 1.42-.5.08-1.15.11-1.85-.11-.43-.14-.98-.32-1.69-.63-2.97-1.28-4.91-4.27-5.06-4.47-.15-.2-1.21-1.61-1.21-3.07 0-1.46.76-2.18 1.03-2.48.27-.3.59-.38.79-.38h.57c.18 0 .43-.07.67.51.25.6.85 2.07.92 2.22.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.18.3.78 1.29 1.67 2.09 1.15 1.02 2.12 1.34 2.42 1.49.3.15.48.13.66-.08.18-.2.76-.88.96-1.18.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.34.08.12.08.7-.17 1.4Z"/>
+              </svg>
+              <span>Enviar por WhatsApp</span>
+            </a>
+            <p class="cta-note" id="whatsapp-note"></p>
+            <details class="message-preview">
+              <summary>Ver texto del mensaje prellenado</summary>
+              <pre id="whatsapp-preview-text"></pre>
+            </details>
+          </div>
+
+          <div class="schedule-section">
+            <div class="schedule-header">
+              <h3>Cronograma mensual de pagos</h3>
+              <span class="schedule-date-ref" id="schedule-reference-date"></span>
+            </div>
+            <div class="table-wrapper">
+              <table class="schedule-table">
+                <caption class="sr-only">Tabla de pagos mensuales con número de pago, fecha de vencimiento e importe en pesos argentinos</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">Vencimiento</th>
+                    <th scope="col" class="col-amount">Importe</th>
+                  </tr>
+                </thead>
+                <tbody id="schedule-tbody"></tbody>
+                <tfoot>
+                  <tr>
+                    <th scope="row" colspan="2">Suma de pagos financiados</th>
+                    <td id="schedule-sum-payments" class="col-amount"></td>
+                  </tr>
+                  <tr class="tfoot-total">
+                    <th scope="row" colspan="2">Anticipo + Suma de pagos (Costo total)</th>
+                    <td id="schedule-total-check" class="col-amount"></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>
+        <strong>DEMO comercial sin valor contractual.</strong> Precios, tasas y modalidades ficticios configurables en <code>config.js</code>.
+      </p>
+      <p id="footer-method-note">Método activo configurable en <code>config.js</code> / <code>calc.js</code>.</p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="calc.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

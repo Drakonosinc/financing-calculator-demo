@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title-dg500 desc-dg500">
+  <title id="title-dg500">Dosificadora Gravimétrica DG-500 (DEMO)</title>
+  <desc id="desc-dg500">Esquema técnico ilustrativo de dosificadora gravimétrica con tolva cónica, sinfín motorizado y balanza de control.</desc>
+  <defs>
+    <pattern id="grid-dg" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#223242" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="360" fill="#14202B"/>
+  <rect width="640" height="360" fill="url(#grid-dg)"/>
+  <rect x="16" y="16" width="608" height="328" fill="none" stroke="#334B61" stroke-width="1.5"/>
+
+  <!-- Frame -->
+  <rect x="150" y="294" width="340" height="18" rx="2" fill="#475569" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="176" y="88" width="20" height="206" fill="#334155" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="444" y="88" width="20" height="206" fill="#334155" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="176" y="88" width="288" height="16" fill="#475569" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- Motor top -->
+  <rect x="296" y="42" width="48" height="46" rx="4" fill="#1E3A5F" stroke="#7DD3FC" stroke-width="2"/>
+  <line x1="320" y1="88" x2="320" y2="218" stroke="#F59E0B" stroke-width="3" stroke-dasharray="6 4"/>
+
+  <!-- Conical hopper -->
+  <polygon points="246,104 394,104 352,188 288,188" fill="#1E293B" stroke="#E2E8F0" stroke-width="2.5"/>
+  <rect x="298" y="188" width="44" height="34" fill="#64748B" stroke="#E2E8F0" stroke-width="2"/>
+
+  <!-- Weighing load cell & sack/container -->
+  <rect x="266" y="274" width="108" height="20" rx="2" fill="#0F172A" stroke="#38BDF8" stroke-width="2"/>
+  <rect x="288" y="232" width="64" height="42" rx="3" fill="none" stroke="#94A3B8" stroke-width="2" stroke-dasharray="5 3"/>
+  <polygon points="292,272 348,272 334,250 306,250" fill="#F59E0B" fill-opacity="0.35"/>
+
+  <!-- PLC panel -->
+  <rect x="478" y="130" width="76" height="96" rx="4" fill="#1E293B" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="490" y="144" width="52" height="32" rx="2" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="516" y="164" text-anchor="middle" fill="#38BDF8" font-family="monospace" font-size="11">5.00 kg</text>
+  <circle cx="502" cy="198" r="6" fill="#22C55E"/>
+  <circle cx="528" cy="198" r="6" fill="#F59E0B"/>
+
+  <!-- Technical label & DEMO watermark -->
+  <text x="608" y="40" text-anchor="end" fill="#94A3B8" font-family="monospace" font-size="11" letter-spacing="1.2">ESQUEMA ILUSTRATIVO</text>
+  <text x="32" y="314" fill="#CBD5E1" font-family="monospace" font-size="12" letter-spacing="1.2">MOD. DG-500 // GRAVIMÉTRICA</text>
+  <text x="32" y="332" fill="#64748B" font-family="monospace" font-size="11">IMAGEN PLACEHOLDER DEMO — SIN ESCALA COMERCIAL</text>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title-lda1000 desc-lda1000">
+  <title id="title-lda1000">Línea Automática Doble Cabezal LDA-1000 (DEMO)</title>
+  <desc id="desc-lda1000">Esquema técnico ilustrativo de línea automática de dosificación doble cabezal sobre cinta transportadora.</desc>
+  <defs>
+    <pattern id="grid-lda" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#223242" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="360" fill="#14202B"/>
+  <rect width="640" height="360" fill="url(#grid-lda)"/>
+  <rect x="16" y="16" width="608" height="328" fill="none" stroke="#334B61" stroke-width="1.5"/>
+
+  <!-- Conveyor belt & legs -->
+  <rect x="74" y="246" width="492" height="20" rx="10" fill="#334155" stroke="#CBD5E1" stroke-width="2"/>
+  <circle cx="92" cy="256" r="6" fill="#94A3B8"/>
+  <circle cx="548" cy="256" r="6" fill="#94A3B8"/>
+  <rect x="116" y="266" width="16" height="44" fill="#475569" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="508" y="266" width="16" height="44" fill="#475569" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Gantry frame -->
+  <rect x="200" y="96" width="240" height="16" fill="#475569" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="200" y="96" width="16" height="150" fill="#334155" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="424" y="96" width="16" height="150" fill="#334155" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- Dual dosing heads -->
+  <rect x="250" y="112" width="38" height="58" rx="3" fill="#1E3A5F" stroke="#7DD3FC" stroke-width="2"/>
+  <rect x="352" y="112" width="38" height="58" rx="3" fill="#1E3A5F" stroke="#7DD3FC" stroke-width="2"/>
+  <rect x="264" y="170" width="10" height="26" fill="#94A3B8" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="366" y="170" width="10" height="26" fill="#94A3B8" stroke="#E2E8F0" stroke-width="1.5"/>
+  <polygon points="265,196 273,196 271,206 267,206" fill="#F59E0B"/>
+  <polygon points="367,196 375,196 373,206 369,206" fill="#F59E0B"/>
+
+  <!-- Bottles on conveyor -->
+  <rect x="130" y="210" width="26" height="36" rx="3" fill="none" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="256" y="210" width="26" height="36" rx="3" fill="#0EA5E9" fill-opacity="0.28" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="358" y="210" width="26" height="36" rx="3" fill="#0EA5E9" fill-opacity="0.28" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="476" y="210" width="26" height="36" rx="3" fill="#22C55E" fill-opacity="0.25" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- PLC column -->
+  <rect x="458" y="114" width="70" height="94" rx="4" fill="#1E293B" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="468" y="126" width="50" height="32" rx="2" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="493" y="146" text-anchor="middle" fill="#38BDF8" font-family="monospace" font-size="10">PLC AUTO</text>
+  <circle cx="480" cy="182" r="5" fill="#22C55E"/>
+  <circle cx="504" cy="182" r="5" fill="#F59E0B"/>
+
+  <!-- Technical label & DEMO watermark -->
+  <text x="608" y="40" text-anchor="end" fill="#94A3B8" font-family="monospace" font-size="11" letter-spacing="1.2">ESQUEMA ILUSTRATIVO</text>
+  <text x="32" y="314" fill="#CBD5E1" font-family="monospace" font-size="12" letter-spacing="1.2">MOD. LDA-1000 // LÍNEA AUTOMÁTICA</text>
+  <text x="32" y="332" fill="#64748B" font-family="monospace" font-size="11">IMAGEN PLACEHOLDER DEMO — SIN ESCALA COMERCIAL</text>
+</svg>
